@@ -1,9 +1,9 @@
 from django.apps import AppConfig
 
 
-class CandidatesConfig(AppConfig):
-    name = 'whosaidwhat.candidates'
-    verbose_name = "Candidates"
+class QuotesConfig(AppConfig):
+    name = 'whosaidwhat.quotes'
+    verbose_name = "Quotes"
 
     def ready(self):
         """Override this to put in:

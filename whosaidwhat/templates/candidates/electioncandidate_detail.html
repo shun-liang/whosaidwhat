@@ -1,10 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% load static %}
 
-</body>
-</html>
+{% block title %}Candidate: {{ object.name }}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>{{ object.name }}</h2>
+            {% if object.quotequestion_set.exists %}
+                <h3>Questions of quotes from {{ object.name }}</h3>
+                {% for question in object.quotequestion_set.all %}
+                <ul>
+                    <li>
+                        <a href="{% url 'question:detail' question.pk %}" class="list-group-item">
+                            {{ question.title }}
+                        </a>
+                    <li>
+                </ul>
+                {% endfor %}
+            {% else %}
+            <p>No question has been asked for what {{ object.name }} has said.</p>
+            <p>Ask a question about a quote from { {object.name }}</p>
+            {% endif %}
+        </div>
+    </div>
+
+</div>
+{% endblock content %}

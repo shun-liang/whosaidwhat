@@ -57,6 +57,7 @@ LOCAL_APPS = [
     'whosaidwhat.users.apps.UsersConfig',
     # Your stuff: custom apps go here
     'whosaidwhat.candidates.apps.CandidatesConfig',
+    'whosaidwhat.quotes.apps.QuotesConfig',
 ]
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
